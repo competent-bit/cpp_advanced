@@ -14,3 +14,8 @@ Similarly, whenever the input types changed, the lambda function would have to b
 ```c++
 [](double a, double b) -> double { return a + b; }
 ```
+C++14 eliminates this issue by allowing the use of the auto keyword in the input parameters of a lambda expression. This enables the compiler to deduce the parameter types at compile time. Therefore, in our previous example, a single lambda expression that works for both integer and floating-point values would look like this:
+
+```c++
+auto sum = [](auto a, auto b) { return a + b; };
+```
