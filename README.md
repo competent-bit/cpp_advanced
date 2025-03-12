@@ -52,6 +52,7 @@ auto sum(T t, T2 t2) {
 ### 2. Variable template
 
 Parametrized variables were commonly implemented using either static data members within class templates or constexpr function templates that returned the desired values.
+
 Starting from C++14, variable templates provide a way to create parameterized variables, making it easier for programmers to define constants and use them with different data types.
 
 ```c++
@@ -65,3 +66,27 @@ double double_pi = pi<double>;
 Note: A variable created from a variable template is referred to as an instantiated variable.
 
 ```
+
+Variable templates in classes are used to declare static data member templates.
+
+Before variable templates, static variables in a class template were parameterized as shown below:
+
+```cpp
+template<class T>
+class X {
+    static T s; // declaration of a non-template static data member in a class template
+};
+```
+
+With the introduction of variable templates in C++14, there's no longer a need to make the entire class a template. Instead, you can declare static data member templates like this:
+
+```cpp
+class X {
+    template<typename T>
+    static const T s; // declaration of a static data member template
+};
+```
+
+
+
+
