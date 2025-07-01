@@ -1,4 +1,4 @@
 # Interview Guide for C++ Developer
-## Features
+## Arrays
 ### 1. 
 
